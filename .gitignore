@@ -1,0 +1,7 @@
+# folder and files IDE
+.idea/
+*.iml
+# folder for log files
+logs/
+# excluded folders
+target/

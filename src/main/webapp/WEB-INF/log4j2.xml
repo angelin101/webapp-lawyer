@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- Задаем путь к папке с Логами -->
+    <Properties>
+        <Property name="log-path">c:\Users\Ангелин\Dropbox\Project\my project\Lawyer\logs\</Property>
+    </Properties>
+    <appenders>
+        <!--Аппендеры. Сначала файловый, потом консольный-->
+        <RollingFile name="File" fileName="${log-path}\lawyer-info.log"
+                     filePattern="${log-path}\lawyer-info-%d{yyyy-MM-dd}.log">
+            <PatternLayout>
+                <pattern>[%p] %d{yyyy-MM-dd HH:mm:ss} %c: %M() %L - %m%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile>
+        <console name="Console" target="SYSTEM_OUT">
+            <PatternLayout>
+                <pattern>[%p] %d{yyyy-MM-dd HH:mm:ss} %c: %M() %L - %m%n</pattern>
+            </PatternLayout>
+        </console>
+    </appenders>
+    <loggers>
+        <logger name="FileLog" level="info">
+            <appenderref ref="File">
+            </appenderref></logger>
+        <root level="info">
+            <appenderref ref="File"></appenderref>
+            <appenderref ref="Console"></appenderref>
+        </root>
+    </loggers>
+</configuration>
+
