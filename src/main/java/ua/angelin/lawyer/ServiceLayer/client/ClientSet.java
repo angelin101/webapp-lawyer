@@ -18,8 +18,10 @@ public class ClientSet {
     private static final Logger LOG = LogManager.getLogger(ClientSet.class);
     static{
         clientSet = new LinkedHashSet<>();
-        clientSet.add(new Client(1, "Andrey", "Angelin", "user", "user"));
-        clientSet.add(new Client(2, "Ivan", "Angelin", "test", "test"));
+        clientSet.add(new Client(1, "Андрей", "Ангелин", "user", "user", "ВК 074912", 365647859, "г. Горловка, пр. Победы 18/31", "050-270-04-80", "sobaka_barabaka@mail.ua"));
+        clientSet.add(new Client(2, "Иван", "Ангелин", "test", "test", "ВК 076342", 1651661156, "г. Горловка, ул. Малышева 25/105", "050-557-24-33", "sobaka_barabaka@mail.ua"));
+
+
     }
     public static int getClientId(String login, String password) throws ClientNotFoundException{
         for (Client client : clientSet){

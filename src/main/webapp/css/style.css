@@ -297,3 +297,96 @@ FOOTER
 	display: inline-block;
 	color: #F00000;
 }
+/*Заголовок пользователя*/
+.userH1{
+	margin: 1em 0 0.5em 0;
+	color: #343434;
+	font-weight: normal;
+	font-family: 'Ultra', sans-serif;
+	font-size: 250%;
+	line-height: 42px;
+	text-align: center;
+	text-transform: uppercase;
+	text-shadow: 0 2px white, 0 3px #777;
+}
+ /*Контейнер, в котором расположена таблица*/
+.arrow_box {
+	position: relative;
+	float: left; /*Определяеться с какого края распологается таблица*/
+	background: #cccccc;
+	border: 1px inherit #5f6e7a;
+	height: 250px;
+	width: 450px;
+	padding: 20px; /*Отступ внутри рамки*/
+	border-radius: 5px;
+	-webkit-box-shadow: #3c4149 -12px 12px 30px 3px;
+	-moz-box-shadow:#3c4149 -12px 12px 30px 3px;
+	box-shadow:#3c4149 -12px 12px 30px 3px;
+	margin: 35px; /*Отступ от края*/
+}
+/*Контейнер второй таблицы*/
+.arrow_box2 {
+	position: relative;
+	float: right;/*Определяеться с какого края распологается таблица*/
+	background: #cccccc;
+	border: 1px inherit #5f6e7a;
+	height: auto;
+	width: 650px;
+	padding: 20px; /*Отступ внутри рамки*/
+	border-radius: 5px;
+	-webkit-box-shadow: #3c4149 12px 12px 30px 3px;
+	-moz-box-shadow:#3c4149 12px 12px 30px 3px;
+	box-shadow:#3c4149 12px 12px 30px 3px;
+	margin: 35px; /*Отступ от края*/
+}
+ /*Таблица*/
+table {
+	border-collapse: collapse;
+	border: 2px solid black;
+	margin: auto;
+}
+td {
+	padding: 5px;
+	padding-right: 30px;
+	border: 1px solid black;
+}
+th {
+	padding: 10px;
+	border: 1px solid black;
+}
+caption {
+	caption-side: top;
+	text-align: left;
+	font-size: 30px;
+	font-family: 'Ultra', sans-serif;
+	color: black;
+}
+ /*Кнопки*/
+/*Контейнер для кнопок*/
+.containerBut {
+	width: 450px;
+	/*float: left; /!*С какой стороны отст*/
+	margin-left: 85px; /*Отступ от края*/
+}
+.button {
+	-moz-border-radius: 5px;
+	-moz-box-shadow: #4481E9 0px 0px 10px;
+	-webkit-border-radius: 5px;
+	-webkit-box-shadow: #4481E9 0 0 10px;
+	background-color: #cccccc;
+	border-radius: 5px;
+	border: 1px solid #3c4149;
+	box-shadow: #4481E9 0px 0px 10px;
+	color: black;
+	display: inline-block;
+	font-size: 1em;
+	margin: auto;
+	padding: 10px;
+	text-decoration: none;
+	text-shadow: #3c4149 5px 5px 15px;
+}
+.button:active {
+	color: #ffffff;
+	position: relative;
+	top: 1px;
+}
