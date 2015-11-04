@@ -1,6 +1,6 @@
 package ua.angelin.lawyer.UILayer.servlets;
 
-import ua.angelin.lawyer.ServiceLayer.client.ClientSet;
+import ua.angelin.lawyer.ServiceLayer.ClientSet;
 import ua.angelin.lawyer.ServiceLayer.exceptions.ClientNotFoundException;
 
 import javax.servlet.ServletException;

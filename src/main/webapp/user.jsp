@@ -24,15 +24,15 @@
          </tr>
          <tr>
              <th>ИНН</th>
-             <th>${client.INNumber}</th>
+             <th>${client.identNumber}</th>
          </tr>
          <tr>
              <th>Адрес</th>
-             <th>${client.address}</th>
+             <th>Some address</th>
          </tr>
          <tr>
              <th>Телефон</th>
-             <th>${client.telephone}</th>
+             <th>${client.telephoneNumber}</th>
          </tr>
          <tr>
              <th>E-mail</th>

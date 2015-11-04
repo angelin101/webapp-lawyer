@@ -1,27 +1,30 @@
-package ua.angelin.lawyer.ServiceLayer.client;
+package ua.angelin.lawyer.ServiceLayer;
 
 /**
  * Created by Ангелин on 02.11.2015.
+ *
+ * Для этого класса реализовать equals и hashCode!!!!!!!!!!!!!!!!!!!
  */
-public class Affairs {
-    private int num;
+public class Affair {
+    private int affairID;
     private String subjectOfDispute;
+    private String otherSide; // Сделать обьектом как и Клиент
 
-    public Affairs() {
+    public Affair() {
     }
 
-    public Affairs(int num, String subjectOfDispute, String otherSide) {
-        this.num = num;
+    public Affair(int affairID, String subjectOfDispute, String otherSide) {
+        this.affairID = affairID;
         this.subjectOfDispute = subjectOfDispute;
         this.otherSide = otherSide;
     }
 
     public int getNum() {
-        return num;
+        return affairID;
     }
 
     public void setNum(int num) {
-        this.num = num;
+        this.affairID = affairID;
     }
 
     public String getSubjectOfDispute() {
@@ -40,5 +43,5 @@ public class Affairs {
         this.otherSide = otherSide;
     }
 
-    private String otherSide;
+    ;
 }
