@@ -3,7 +3,10 @@ package ua.angelin.lawyer.ServiceLayer;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import ua.angelin.lawyer.ServiceLayer.exceptions.ClientNotFoundException;
+import ua.angelin.lawyer.DBLayer.exceptions.*;
+import ua.angelin.lawyer.DBLayer.pojo.Address;
+import ua.angelin.lawyer.DBLayer.pojo.Affair;
+import ua.angelin.lawyer.DBLayer.pojo.Client;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -23,12 +26,12 @@ public class ClientSet {
         affairSet.add(new Affair(1, "Конокрадство", "ЧП \"Рога и копыта\""));
         affairSet.add(new Affair(2, "Хищение гос средств", "ЧП \"Фемида\""));
         affairSet.add(new Affair(3, "Разбой", "ЧП \"Сосулька\""));
-        clientSet.add(new Client(1, "user", "user", false, "Андрей", "Ангелин",  new Address("Украина", "Горловка", "Победы", "18/31"), "050-270-04-80", "sobaka_barabaka@mail.ua", affairSet, "3225203695","ВК 074912"));
-        clientSet.add(new Client(2, "ivan", "ivan", false, "Иван", "Ангелин",  new Address("Украина", "Горловка", "Малышева", "45/74"), "050-557-24-33", "sobaka_barabaka@mail.ua", affairSet, "3225203695","ВК 074912"));
+        clientSet.add(new Client(1, "user", "user", false, "Андрей", "Ангелин",  new Address("Горловка", "Победы", "18/31"), "050-270-04-80", "sobaka_barabaka@mail.ua", affairSet, "3225203695","ВК 074912"));
+        clientSet.add(new Client(2, "ivan", "ivan", false, "Иван", "Ангелин",  new Address("Горловка", "Малышева", "45/74"), "050-557-24-33", "sobaka_barabaka@mail.ua", affairSet, "3225203695","ВК 074912"));
 
 
     }
-    public static int getClientId(String login, String password) throws ClientNotFoundException{
+    public static int getClientId(String login, String password) throws UserNotFoundException{
         for (Client client : clientSet){
             if(client.getLogin().equals(login) && (client.getPassword().equals(password))){
                 LOG.info("Клиент под ID - "+client.getUserID()+", авторизировался.");
@@ -36,7 +39,7 @@ public class ClientSet {
             }
         }
         LOG.warn("Клиент с логином: "+login+", и паролем: "+ password+" не найден!");
-        throw new ClientNotFoundException();
+        throw new UserNotFoundException();
     }
     public static Client getClientById(int id){
         for (Client client : clientSet){

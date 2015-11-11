@@ -1,7 +1,7 @@
 package ua.angelin.lawyer.UILayer.servlets;
 
 import ua.angelin.lawyer.ServiceLayer.ClientSet;
-import ua.angelin.lawyer.ServiceLayer.exceptions.ClientNotFoundException;
+import ua.angelin.lawyer.DBLayer.exceptions.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -29,7 +29,7 @@ public class AuthorizeServlet extends HttpServlet {
                 // Проверяем из списка уже зарегестрированых пользователей,
                 // если такого нет, тогда метод вместо нужного ID возвращает Exception
                  clientID = ClientSet.getClientId(login, password);
-            } catch (ClientNotFoundException e) {
+            } catch (UserNotFoundException e) {
                 req.setAttribute("error", e);
                 req.getRequestDispatcher("authorize.jsp").forward(req, resp);
             }

@@ -1,4 +1,7 @@
-package ua.angelin.lawyer.ServiceLayer;
+package ua.angelin.lawyer.DBLayer.pojo;
+
+import ua.angelin.lawyer.DBLayer.pojo.Address;
+import ua.angelin.lawyer.DBLayer.pojo.Affair;
 
 import java.util.Set;
 
@@ -9,7 +12,7 @@ public abstract class User {
     private int userID;
     private String login;
     private String password;
-    private boolean isJuristicPerson;
+    private boolean isLawyer;
     private String name;
     private String surname;
     private Address address;
@@ -20,11 +23,11 @@ public abstract class User {
     public User() {
     }
 
-    public User(int userID, String login, String password, boolean isJuristicPerson, String name, String surname, Address address, String telephoneNumber, String email, Set<Affair> affairs) {
+    public User(int userID, String login, String password, boolean isLawyer, String name, String surname, Address address, String telephoneNumber, String email, Set<Affair> affairs) {
         this.userID = userID;
         this.login = login;
         this.password = password;
-        this.isJuristicPerson = isJuristicPerson;
+        this.isLawyer = isLawyer;
         this.name = name;
         this.surname = surname;
         this.address = address;
@@ -57,12 +60,12 @@ public abstract class User {
         this.password = password;
     }
 
-    public boolean isJuristicPerson() {
-        return isJuristicPerson;
+    public boolean isLawyer() {
+        return isLawyer;
     }
 
-    public void setIsJuristicPerson(boolean isJuristicPerson) {
-        this.isJuristicPerson = isJuristicPerson;
+    public void setIsLawyer(boolean isLawyer) {
+        this.isLawyer = isLawyer;
     }
 
     public String getName() {

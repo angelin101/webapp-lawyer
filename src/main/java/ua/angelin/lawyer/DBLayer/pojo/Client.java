@@ -1,8 +1,5 @@
-package ua.angelin.lawyer.ServiceLayer;
+package ua.angelin.lawyer.DBLayer.pojo;
 
-import ua.angelin.lawyer.ServiceLayer.Address;
-import ua.angelin.lawyer.ServiceLayer.Affair;
-import ua.angelin.lawyer.ServiceLayer.User;
 
 import java.util.Set;
 
@@ -12,9 +9,14 @@ import java.util.Set;
  *
  * Класс заглушка для тестирования авторизации, до реализации Уровня Бизнес логики!!!
  */
-public class Client extends User{
+public class Client extends User {
     private String identNumber;
     private String passport;
+
+    // При каждом создании обьекта выполняеться этот блок, определяя Клиента НЕ Юр.лицом
+    {
+        setIsLawyer(false);
+    }
 
     public Client() {
     }
@@ -24,8 +26,8 @@ public class Client extends User{
         this.passport = passport;
     }
 
-    public Client(int userID, String login, String password, boolean isJuristicPerson, String name, String surname, Address address, String telephoneNumber, String email, Set<Affair> affairs, String identNumber, String passport) {
-        super(userID, login, password, isJuristicPerson, name, surname, address, telephoneNumber, email, affairs);
+    public Client(int userID, String login, String password, boolean isLawyer, String name, String surname, Address address, String telephoneNumber, String email, Set<Affair> affairs, String identNumber, String passport) {
+        super(userID, login, password, isLawyer, name, surname, address, telephoneNumber, email, affairs);
         this.identNumber = identNumber;
         this.passport = passport;
     }

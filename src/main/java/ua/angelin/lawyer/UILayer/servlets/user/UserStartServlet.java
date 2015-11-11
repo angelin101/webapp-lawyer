@@ -1,6 +1,6 @@
 package ua.angelin.lawyer.UILayer.servlets.user;
 
-import ua.angelin.lawyer.ServiceLayer.Client;
+import ua.angelin.lawyer.DBLayer.pojo.Client;
 import ua.angelin.lawyer.ServiceLayer.ClientSet;
 
 import javax.servlet.ServletException;
