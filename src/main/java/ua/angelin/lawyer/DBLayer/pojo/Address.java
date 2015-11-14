@@ -40,4 +40,32 @@ public class Address {
     public void setApartments(String apartments) {
         this.apartments = apartments;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) return false;
+        if (!(obj instanceof Address)) return false;
+        Address address = (Address) obj;
+        if (!city.equals(address.city)) return false;
+        if (!street.equals(address.street)) return false;
+        return apartments.equals(address.apartments);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = city.hashCode();
+        result = 31 * result + street.hashCode();
+        result = 31 * result + apartments.hashCode();
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "city='" + city + '\'' +
+                ", street='" + street + '\'' +
+                ", apartments='" + apartments + '\'' +
+                '}';
+    }
 }
+

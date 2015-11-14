@@ -115,4 +115,6 @@ public abstract class User {
     public void setAffairs(Set<Affair> affairs) {
         this.affairs = affairs;
     }
+
+
 }
