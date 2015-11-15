@@ -15,7 +15,6 @@ import java.sql.SQLException;
  */
 public class MyAddressDAO implements AddressDAO {
     private static final Logger LOG = LogManager.getLogger(MyAddressDAO.class);
-    private ResultSet resultSet;
     private Connection connection;
     private final String queryGetAddressByID;
 
@@ -29,7 +28,7 @@ public class MyAddressDAO implements AddressDAO {
         Address address = new Address();
         try(PreparedStatement statement = connection.prepareStatement(queryGetAddressByID)) {
             statement.setInt(1, addressID);
-            resultSet = statement.executeQuery();
+            ResultSet resultSet = statement.executeQuery();
             resultSet.next();
             address.setCity(resultSet.getString("city"));
             address.setStreet(resultSet.getString("street"));
@@ -37,18 +36,6 @@ public class MyAddressDAO implements AddressDAO {
         } catch (SQLException e) {
             LOG.error(e);
         }
-        finally {
-            resultSetClose();
-        }
         return address;
-    }
-
-    // Приватный метод для закрытия ResultSet, чтобы в каждом методе его не помещать в блок try/catch
-    private void resultSetClose(){
-        try {
-            resultSet.close();
-        } catch (SQLException e) {
-            LOG.error(e);
-        }
     }
 }

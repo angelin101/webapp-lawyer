@@ -9,6 +9,8 @@ import ua.angelin.lawyer.DBLayer.pojo.Affair;
 import ua.angelin.lawyer.DBLayer.pojo.Client;
 
 import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -18,11 +20,11 @@ import java.util.Set;
  */
 public class ClientSet {
     private static Set<Client> clientSet;
-    private static Set<Affair> affairSet;
+    private static List<Affair> affairSet;
     private static final Logger LOG = LogManager.getLogger(ClientSet.class);
     static{
         clientSet = new LinkedHashSet<>();
-        affairSet = new LinkedHashSet<>();
+        affairSet = new LinkedList<>();
         affairSet.add(new Affair(1, "Конокрадство", "ЧП \"Рога и копыта\""));
         affairSet.add(new Affair(2, "Хищение гос средств", "ЧП \"Фемида\""));
         affairSet.add(new Affair(3, "Разбой", "ЧП \"Сосулька\""));

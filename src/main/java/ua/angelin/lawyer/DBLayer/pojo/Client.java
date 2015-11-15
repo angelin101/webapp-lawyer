@@ -1,7 +1,8 @@
 package ua.angelin.lawyer.DBLayer.pojo;
 
 
-import java.util.Set;
+import java.util.List;
+
 
 
 /**
@@ -10,6 +11,7 @@ import java.util.Set;
  * Класс заглушка для тестирования авторизации, до реализации Уровня Бизнес логики!!!
  */
 public class Client extends User {
+    private int clientID;
     private String identNumber;
     private String passport;
 
@@ -21,15 +23,24 @@ public class Client extends User {
     public Client() {
     }
 
-    public Client(String identNumber, String passport) {
+    public Client(int clientID, String identNumber, String passport) {
+        this.clientID = clientID;
+        this.identNumber = identNumber;
+        this.passport = passport;
+    }
+    // Временный конструктор,для заглушки вместо БД. Вместо него потом сделать конструктор принимающий обьект User
+    public Client(int userID, String login, String password, boolean isLawyer, String name, String surname, Address address, String telephoneNumber, String email, List<Affair> affairs, String identNumber, String passport) {
+        super(userID, login, password, isLawyer, name, surname, address, telephoneNumber, email, affairs);
         this.identNumber = identNumber;
         this.passport = passport;
     }
 
-    public Client(int userID, String login, String password, boolean isLawyer, String name, String surname, Address address, String telephoneNumber, String email, Set<Affair> affairs, String identNumber, String passport) {
-        super(userID, login, password, isLawyer, name, surname, address, telephoneNumber, email, affairs);
-        this.identNumber = identNumber;
-        this.passport = passport;
+    public int getClientID() {
+        return clientID;
+    }
+
+    public void setClientID(int clientID) {
+        this.clientID = clientID;
     }
 
     public String getIdentNumber() {
@@ -46,5 +57,19 @@ public class Client extends User {
 
     public void setPassport(String passport) {
         this.passport = passport;
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "clientID=" + clientID + '\'' +
+                ", userID='"+getUserID() + '\'' +
+                ", name='"+getName() + '\'' +
+                ", surname='"+getSurname() + '\'' +
+                ", identNumber='" + identNumber + '\'' +
+                ", passport='" + passport + '\'' +
+                ", telephone='"+getTelephoneNumber() + '\'' +
+                ", e-mail='"+getEmail() + '\'' +
+                '}';
     }
 }

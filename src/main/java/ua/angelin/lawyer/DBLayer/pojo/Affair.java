@@ -9,8 +9,14 @@ public class Affair {
     private int affairID;
     private String subjectOfDispute;
     private String otherSide; // Сделать обьектом как и Клиент
+    // Реализовать все переменные после чего реализовать методы equals() и hashCode()!!!
 
     public Affair() {
+    }
+    // Временный конструктор!!!! Пока класс не будет реализован полностью!!!!
+    public Affair(int affairID, String subjectOfDispute){
+        this.affairID = affairID;
+        this.subjectOfDispute = subjectOfDispute;
     }
 
     public Affair(int affairID, String subjectOfDispute, String otherSide) {
@@ -19,14 +25,13 @@ public class Affair {
         this.otherSide = otherSide;
     }
 
-    public int getNum() {
+    public int getAffairID() {
         return affairID;
     }
 
-    public void setNum(int num) {
+    public void setAffairID(int affairID) {
         this.affairID = affairID;
     }
-
     public String getSubjectOfDispute() {
         return subjectOfDispute;
     }
@@ -41,5 +46,14 @@ public class Affair {
 
     public void setOtherSide(String otherSide) {
         this.otherSide = otherSide;
+    }
+
+    // Временная реализация!!!!!!!
+    @Override
+    public String toString() {
+        return "Affair{" +
+                "affairID=" + affairID +
+                ", subjectOfDispute='" + subjectOfDispute + '\'' +
+                '}';
     }
 }

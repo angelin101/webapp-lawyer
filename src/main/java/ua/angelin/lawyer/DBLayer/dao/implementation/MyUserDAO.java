@@ -15,9 +15,9 @@ import java.sql.SQLException;
 /**
  * Created by Ангелин on 14.11.2015.
  */
+
 public class MyUserDAO implements UserDAO {
     private static final Logger LOG = LogManager.getLogger(MyUserDAO.class);
-    private ResultSet resultSet;
     private Connection connection;
     private final String queryGetUserByLogin;
 
@@ -32,7 +32,7 @@ public class MyUserDAO implements UserDAO {
         try(PreparedStatement statement = connection.prepareStatement(queryGetUserByLogin)) {
             statement.setString(1, login);
             statement.setString(2, password);
-            resultSet = statement.executeQuery();
+            ResultSet resultSet = statement.executeQuery();
             resultSet.next();
             boolean isLawyer = true;
             if (resultSet.getInt("lawyer")==0){
@@ -50,18 +50,6 @@ public class MyUserDAO implements UserDAO {
             LOG.error("UserNotFoundException", e);
             throw new UserNotFoundException();
         }
-        finally {
-            resultSetClose();
-        }
         return user;
-    }
-
-    // Приватный метод для закрытия ResultSet, чтобы в каждом методе его не помещать в блок try/catch
-    private void resultSetClose(){
-        try {
-            resultSet.close();
-        } catch (SQLException e) {
-            LOG.error(e);
-        }
     }
 }

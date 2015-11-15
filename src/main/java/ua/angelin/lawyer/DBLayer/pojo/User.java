@@ -1,9 +1,7 @@
 package ua.angelin.lawyer.DBLayer.pojo;
 
-import ua.angelin.lawyer.DBLayer.pojo.Address;
-import ua.angelin.lawyer.DBLayer.pojo.Affair;
 
-import java.util.Set;
+import java.util.List;
 
 /**
  * Created by Ангелин on 04.11.2015.
@@ -16,14 +14,16 @@ public abstract class User {
     private String name;
     private String surname;
     private Address address;
+    private int addressID; // Поле необходимое для доставания обьекта Адрес после создания обьекта Клиент!?
     private String telephoneNumber; // В дальнейшем можно сделать Set
     private String email; // В дальнейшем можно сделать Set
-    private Set<Affair> affairs;
+    private List<Affair> affairs; // В дальнейшем, когда класс Affiar будет полностью реализован, можно сделать Set<Affair>
+    //(предварительно определиться сo значимыми для метода equals() переменными!!!)
 
     public User() {
     }
 
-    public User(int userID, String login, String password, boolean isLawyer, String name, String surname, Address address, String telephoneNumber, String email, Set<Affair> affairs) {
+    public User(int userID, String login, String password, boolean isLawyer, String name, String surname, Address address, String telephoneNumber, String email, List<Affair> affairs) {
         this.userID = userID;
         this.login = login;
         this.password = password;
@@ -108,13 +108,19 @@ public abstract class User {
         this.email = email;
     }
 
-    public Set<Affair> getAffairs() {
+    public List<Affair> getAffairs() {
         return affairs;
     }
 
-    public void setAffairs(Set<Affair> affairs) {
+    public void setAffairs(List<Affair> affairs) {
         this.affairs = affairs;
     }
 
+    public int getAddressID() {
+        return addressID;
+    }
 
+    public void setAddressID(int addressID) {
+        this.addressID = addressID;
+    }
 }

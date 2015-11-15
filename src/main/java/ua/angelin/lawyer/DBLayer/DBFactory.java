@@ -7,6 +7,8 @@ import ua.angelin.lawyer.DBLayer.dao.AffairDAO;
 import ua.angelin.lawyer.DBLayer.dao.ClientDAO;
 import ua.angelin.lawyer.DBLayer.dao.UserDAO;
 import ua.angelin.lawyer.DBLayer.dao.implementation.MyAddressDAO;
+import ua.angelin.lawyer.DBLayer.dao.implementation.MyAffairDAO;
+import ua.angelin.lawyer.DBLayer.dao.implementation.MyClientDAO;
 import ua.angelin.lawyer.DBLayer.dao.implementation.MyUserDAO;
 
 import java.sql.Connection;
@@ -52,12 +54,12 @@ public class DBFactory{
         return new MyUserDAO(connection);
     }
     public static ClientDAO getClientDAO(Connection connection){
-        return null;
+        return new MyClientDAO(connection);
     }
     public static AddressDAO getAddressDAO(Connection connection){
         return new MyAddressDAO(connection);
     }
     public static AffairDAO getAffairDAO(Connection connection){
-        return null;
+        return new MyAffairDAO(connection);
     }
 }
