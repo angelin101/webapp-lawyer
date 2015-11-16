@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by Ангелин on 15.11.2015.
  */
-public class MyAffairDAO implements AffairDAO {
+class MyAffairDAO implements AffairDAO {
     private static final Logger LOG = LogManager.getLogger(MyAffairDAO.class);
     private Connection connection;
     private final String queryGetAffairsByClientID;

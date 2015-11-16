@@ -15,7 +15,7 @@ import java.sql.SQLException;
 /**
  * Created by Ангелин on 15.11.2015.
  */
-public class MyClientDAO implements ClientDAO {
+class MyClientDAO implements ClientDAO {
     private static final Logger LOG = LogManager.getLogger(MyClientDAO.class);
     private Connection connection;
     private final String queryGetClientByUser;

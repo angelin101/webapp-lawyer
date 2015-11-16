@@ -13,7 +13,7 @@ import java.sql.SQLException;
 /**
  * Created by Ангелин on 14.11.2015.
  */
-public class MyAddressDAO implements AddressDAO {
+class MyAddressDAO implements AddressDAO {
     private static final Logger LOG = LogManager.getLogger(MyAddressDAO.class);
     private Connection connection;
     private final String queryGetAddressByID;

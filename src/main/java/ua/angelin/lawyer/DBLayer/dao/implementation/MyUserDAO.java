@@ -16,7 +16,7 @@ import java.sql.SQLException;
  * Created by Ангелин on 14.11.2015.
  */
 
-public class MyUserDAO implements UserDAO {
+class MyUserDAO implements UserDAO {
     private static final Logger LOG = LogManager.getLogger(MyUserDAO.class);
     private Connection connection;
     private final String queryGetUserByLogin;
@@ -28,7 +28,7 @@ public class MyUserDAO implements UserDAO {
 
     @Override
     public User getUserByLogin(String login, String password) throws UserNotFoundException {
-        User user = null; // null потому что в будушем это может быть Адвокат
+        User user = null; // null потому что в будушем это может быть Адвокат, а прямой реализации User - нет
         try(PreparedStatement statement = connection.prepareStatement(queryGetUserByLogin)) {
             statement.setString(1, login);
             statement.setString(2, password);
@@ -47,7 +47,7 @@ public class MyUserDAO implements UserDAO {
             user.setLogin(login);
             user.setPassword(password);
         }catch (SQLException e) {
-            LOG.error("UserNotFoundException", e);
+            LOG.warn("UserNotFoundException", e);
             throw new UserNotFoundException();
         }
         return user;

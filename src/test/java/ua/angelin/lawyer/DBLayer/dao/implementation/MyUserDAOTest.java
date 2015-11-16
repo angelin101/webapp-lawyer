@@ -1,7 +1,6 @@
 package ua.angelin.lawyer.DBLayer.dao.implementation;
 
 import org.junit.Test;
-import ua.angelin.lawyer.DBLayer.DBFactory;
 import ua.angelin.lawyer.DBLayer.dao.UserDAO;
 import ua.angelin.lawyer.DBLayer.exceptions.UserNotFoundException;
 import ua.angelin.lawyer.DBLayer.pojo.User;

@@ -1,7 +1,6 @@
 package ua.angelin.lawyer.DBLayer.dao.implementation;
 
 import org.junit.*;
-import ua.angelin.lawyer.DBLayer.DBFactory;
 import ua.angelin.lawyer.DBLayer.dao.AddressDAO;
 import ua.angelin.lawyer.DBLayer.dao.AffairDAO;
 import ua.angelin.lawyer.DBLayer.dao.ClientDAO;

@@ -7,8 +7,6 @@ import java.util.List;
 
 /**
  * Created by Ангелин on 28.10.2015.
- *
- * Класс заглушка для тестирования авторизации, до реализации Уровня Бизнес логики!!!
  */
 public class Client extends User {
     private int clientID;

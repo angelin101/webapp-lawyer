@@ -1,4 +1,4 @@
-package ua.angelin.lawyer.DBLayer;
+package ua.angelin.lawyer.DBLayer.dao.implementation;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -6,10 +6,6 @@ import ua.angelin.lawyer.DBLayer.dao.AddressDAO;
 import ua.angelin.lawyer.DBLayer.dao.AffairDAO;
 import ua.angelin.lawyer.DBLayer.dao.ClientDAO;
 import ua.angelin.lawyer.DBLayer.dao.UserDAO;
-import ua.angelin.lawyer.DBLayer.dao.implementation.MyAddressDAO;
-import ua.angelin.lawyer.DBLayer.dao.implementation.MyAffairDAO;
-import ua.angelin.lawyer.DBLayer.dao.implementation.MyClientDAO;
-import ua.angelin.lawyer.DBLayer.dao.implementation.MyUserDAO;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
