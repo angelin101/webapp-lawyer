@@ -40,14 +40,14 @@ class MyUserDAO implements UserDAO {
                 user = new Client(); // Если false значит Клиент
             }
             else{
-                // user = new Lawyer();
+                // client = new Lawyer();
             }
             user.setUserID(resultSet.getInt("user_id"));
             user.setIsLawyer(isLawyer);
             user.setLogin(login);
             user.setPassword(password);
         }catch (SQLException e) {
-            LOG.warn("UserNotFoundException", e);
+            LOG.warn("UserNotFoundException", e.getMessage());
             throw new UserNotFoundException();
         }
         return user;

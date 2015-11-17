@@ -19,6 +19,7 @@ import java.util.List;
  */
 public class MadeClient {
 
+    // В этом методе собираеться обьект Client
     public static Client pullClient(Connection connection, User user){
         ClientDAO clientDAO = DBFactory.getClientDAO(connection);
         Client client = clientDAO.getClientByUser(user);

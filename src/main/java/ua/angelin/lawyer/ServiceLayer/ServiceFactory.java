@@ -24,10 +24,10 @@ public class ServiceFactory {
             user = userDAO.getUserByLogin(login, password);
             if (user.isLawyer()){
                 // Вызываем метод возвращающий обьект Lawyer
-                // user = (User) pullLawyer(user);
+                // client = (User) pullLawyer(client);
             }
             else{
-                user = MadeClient.pullClient(connection, user);// НУЖНО ЛИ ПРИВОДИТЬ ЯВНО К User??????
+                user = MadeClient.pullClient(connection, user);
             }
         } catch (UserNotFoundException e) {
             LOG.warn(e);

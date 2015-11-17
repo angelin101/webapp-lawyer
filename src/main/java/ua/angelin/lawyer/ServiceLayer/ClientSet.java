@@ -18,6 +18,7 @@ import java.util.Set;
  *
  * Класс заглушка для тестирования авторизации, до подключения базы данных!!!
  */
+@Deprecated
 public class ClientSet {
     private static Set<Client> clientSet;
     private static List<Affair> affairSet;
@@ -28,7 +29,7 @@ public class ClientSet {
         affairSet.add(new Affair(1, "Конокрадство", "ЧП \"Рога и копыта\""));
         affairSet.add(new Affair(2, "Хищение гос средств", "ЧП \"Фемида\""));
         affairSet.add(new Affair(3, "Разбой", "ЧП \"Сосулька\""));
-        clientSet.add(new Client(1, "user", "user", false, "Андрей", "Ангелин",  new Address("Горловка", "Победы", "18/31"), "050-270-04-80", "sobaka_barabaka@mail.ua", affairSet, "3225203695","ВК 074912"));
+        clientSet.add(new Client(1, "client", "client", false, "Андрей", "Ангелин",  new Address("Горловка", "Победы", "18/31"), "050-270-04-80", "sobaka_barabaka@mail.ua", affairSet, "3225203695","ВК 074912"));
         clientSet.add(new Client(2, "ivan", "ivan", false, "Иван", "Ангелин",  new Address("Горловка", "Малышева", "45/74"), "050-557-24-33", "sobaka_barabaka@mail.ua", affairSet, "3225203695","ВК 074912"));
     }
     public static int getClientId(String login, String password) throws UserNotFoundException{

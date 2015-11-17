@@ -1,7 +1,11 @@
 package ua.angelin.lawyer.UILayer.servlets;
 
-import ua.angelin.lawyer.ServiceLayer.ClientSet;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import ua.angelin.lawyer.DBLayer.pojo.Client;
+import ua.angelin.lawyer.DBLayer.pojo.User;
 import ua.angelin.lawyer.DBLayer.exceptions.*;
+import ua.angelin.lawyer.ServiceLayer.ServiceFactory;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -13,32 +17,35 @@ import java.io.IOException;
  * Created by Ангелин on 27.10.2015.
  */
 public class AuthorizeServlet extends HttpServlet {
+    private static final Logger LOG = LogManager.getLogger(AuthorizeServlet.class);
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
-        // Определяем какой submit был активирован (Регистрация или Войти)
         String submitValue = req.getParameter("submit");
+        // Определяем какой submit был активирован (Регистрация или Войти)
         if (submitValue.equals("ВОЙТИ")){
             String login = req.getParameter("username");
             String password = req.getParameter("password");
-            // По логике для подтверждения пользователя будет возвращаться его ID и методом GET передаваться
-            // сервлету USER, где уже по ID будет вытягиваться из БД класс Client
-            // (такая реализация, по идее, должна ускорять работу методов в DB layer)
-            int clientID = 0;
             try {
-                // Проверяем из списка уже зарегестрированых пользователей,
-                // если такого нет, тогда метод вместо нужного ID возвращает Exception
-                 clientID = ClientSet.getClientId(login, password);
+               User user = ServiceFactory.getUser(login,password);
+               // Проверяем кто авторизировался
+                if (user instanceof Client){
+                   LOG.info("Клиент под логином - "+user.getLogin()+" зашел на страничку!");
+                   Client client = (Client) user;
+                   // Кидаем POST в сервлет ClientStartServlet
+                   req.setAttribute("client", client);
+                   req.getRequestDispatcher("/client").forward(req, resp);
+               }
+               else {
+                   LOG.info("Это Адвокат");
+                   // Аналогичный Клиенту код
+               }
             } catch (UserNotFoundException e) {
+                LOG.warn("Клиент с логином: "+login+", и паролем: "+ password+" не найден!");
                 req.setAttribute("error", e);
                 req.getRequestDispatcher("authorize.jsp").forward(req, resp);
             }
-            resp.sendRedirect("/user?id="+clientID);// Передается методом GET
-/*
-            Использовать этот блок кода если будет использовать метод POST
-            req.setAttribute("client", client);
-            req.getRequestDispatcher("user.jsp").forward(req, resp);// Передается методом POST
-*/
         }
         else{
             resp.sendRedirect("/registration");
