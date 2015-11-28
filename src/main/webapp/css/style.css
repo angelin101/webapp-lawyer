@@ -316,13 +316,13 @@ FOOTER
 	background: #cccccc;
 	border: 1px inherit #5f6e7a;
 	height: 250px;
-	width: 450px;
+	width: 400px;
 	padding: 20px; /*Отступ внутри рамки*/
 	border-radius: 5px;
 	-webkit-box-shadow: #3c4149 -12px 12px 30px 3px;
 	-moz-box-shadow:#3c4149 -12px 12px 30px 3px;
 	box-shadow:#3c4149 -12px 12px 30px 3px;
-	margin: 35px; /*Отступ от края*/
+	margin: 25px; /*Отступ от края*/
 }
 /*Контейнер второй таблицы*/
 .arrow_box2 {
@@ -331,13 +331,13 @@ FOOTER
 	background: #cccccc;
 	border: 1px inherit #5f6e7a;
 	height: auto;
-	width: 650px;
+	width: 750px;
 	padding: 20px; /*Отступ внутри рамки*/
 	border-radius: 5px;
 	-webkit-box-shadow: #3c4149 12px 12px 30px 3px;
 	-moz-box-shadow:#3c4149 12px 12px 30px 3px;
 	box-shadow:#3c4149 12px 12px 30px 3px;
-	margin: 35px; /*Отступ от края*/
+	margin: 25px; /*Отступ от края*/
 }
  /*Таблица*/
 table {
@@ -366,7 +366,7 @@ caption {
 .containerBut {
 	width: 450px;
 	/*float: left; /!*С какой стороны отст*/
-	margin-left: 85px; /*Отступ от края*/
+	margin-left: 50px; /*Отступ от края*/
 }
 .button {
 	-moz-border-radius: 5px;

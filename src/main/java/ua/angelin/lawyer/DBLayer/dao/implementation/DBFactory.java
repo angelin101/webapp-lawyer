@@ -19,11 +19,16 @@ import java.sql.SQLException;
  */
 
 
-public class DBFactory{
+public final class DBFactory{
     private static final Logger LOG = LogManager.getLogger(DBFactory.class);
     private static final String URL = "jdbc:mysql://localhost:3306/lawyer_db";
     private static final String USER = "root";
     private static final String PASSWORD = "aass8885";
+
+    private DBFactory(){
+        // Для того что бы нельзя было создать экземпляр класса
+        // *Наследовать тоже нельзя
+    }
 
     public static Connection getConnection(){
         Connection connection = null;

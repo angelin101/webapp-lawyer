@@ -40,4 +40,5 @@ public class ClientStartServlet extends HttpServlet {
         // Вызываеться метод GET этого же сервлета (в GET запросе учавствует ID клиента)
         resp.sendRedirect("/client?id="+client.getClientID());
     }
+
 }

@@ -14,7 +14,6 @@ public abstract class User {
     private String name;
     private String surname;
     private Address address;
-    private int addressID; // Поле необходимое для доставания обьекта Адрес после создания обьекта Клиент!?
     private String telephoneNumber; // В дальнейшем можно сделать Set
     private String email; // В дальнейшем можно сделать Set
     private List<Affair> affairs; // В дальнейшем, когда класс Affiar будет полностью реализован, можно сделать Set<Affair>
@@ -117,10 +116,11 @@ public abstract class User {
     }
 
     public int getAddressID() {
-        return addressID;
+        return address.getAddressID();
     }
 
     public void setAddressID(int addressID) {
-        this.addressID = addressID;
+        address = new Address();
+        address.setAddressID(addressID);
     }
 }

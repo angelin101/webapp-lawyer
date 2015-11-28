@@ -17,7 +17,7 @@ import java.util.List;
  *
  * Подумать о перейменовании класса!!!!
  */
-public class MadeClient {
+public class MakeClient {
 
     // В этом методе собираеться обьект Client
     public static Client pullClient(Connection connection, User user){

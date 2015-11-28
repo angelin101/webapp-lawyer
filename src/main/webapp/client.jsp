@@ -28,7 +28,7 @@
          </tr>
          <tr>
              <th>Адрес</th>
-             <th>Some address</th>
+             <th>${client.address}</th>
          </tr>
          <tr>
              <th>Телефон</th>
@@ -48,24 +48,28 @@
              <th>№ дела</th>
              <th>Предмет спора</th>
              <th>Другая сторона</th>
+             <th>Состояние</th>
          </tr>
          <tr>
              <td>1</td>
-             <td><a href="page/baton.html" title="Нажать для перехода к Делу">Дело -- 1</a></td>
+             <td><a href="page/baton.html" title="Нажать для перехода к Делу">902/1102/15</a></td>
              <td>Конокрадство</td>
              <td>ЧП "Рога и копыта"</td>
+             <td>В производстве</td>
          </tr>
          <tr>
              <td>2</td>
              <td><a href="page/baton.html" title="Нажать для перехода к Делу">Дело -- 2</a></td>
              <td>Изнасилование</td>
              <td>ЧП "Сосулька"</td>
+             <td>Закрыто</td>
          </tr>
          <tr>
              <td>3</td>
              <td><a href="page/baton.html" title="Нажать для перехода к Делу">Дело -- 3</a></td>
              <td>Хищение гос. средств</td>
              <td>ЧП "Фемида"</td>
+             <td>В производстве</td>
          </tr>
      </table>
  </div>

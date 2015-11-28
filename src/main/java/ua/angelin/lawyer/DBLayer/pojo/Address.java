@@ -4,6 +4,7 @@ package ua.angelin.lawyer.DBLayer.pojo;
  * Created by Ангелин on 04.11.2015.
  */
 public class Address {
+    private int addressID;
     private String city;
     private String street;
     private String apartments;
@@ -41,6 +42,14 @@ public class Address {
         this.apartments = apartments;
     }
 
+    public int getAddressID() {
+        return addressID;
+    }
+
+    public void setAddressID(int addressID) {
+        this.addressID = addressID;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (obj == null) return false;
@@ -61,11 +70,9 @@ public class Address {
 
     @Override
     public String toString() {
-        return "Address{" +
-                "city='" + city + '\'' +
-                ", street='" + street + '\'' +
-                ", apartments='" + apartments + '\'' +
-                '}';
+        return "г. " + city +
+                ", ул. " + street +
+                ", " + apartments;
     }
 }
 

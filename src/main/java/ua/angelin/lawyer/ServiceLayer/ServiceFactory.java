@@ -27,7 +27,7 @@ public class ServiceFactory {
                 // client = (User) pullLawyer(client);
             }
             else{
-                user = MadeClient.pullClient(connection, user);
+                user = MakeClient.pullClient(connection, user);
             }
         } catch (UserNotFoundException e) {
             LOG.warn(e);
