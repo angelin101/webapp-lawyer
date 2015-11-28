@@ -35,10 +35,10 @@ class MyClientDAO implements ClientDAO {
             client.setUserID(user.getUserID());
             client.setLogin(user.getLogin());
             client.setPassword(user.getPassword());
-            client.setClientID(resultSet.getInt("client_id"));
+            client.setId(resultSet.getInt("client_id"));
             client.setName(resultSet.getString("name"));
             client.setSurname(resultSet.getString("surname"));
-            client.setIdentNumber(resultSet.getString("inn"));
+            client.setInn(resultSet.getString("inn"));
             client.setPassport(resultSet.getString("passport"));
             client.setTelephoneNumber(resultSet.getString("telephone"));
             client.setEmail(resultSet.getString("email"));

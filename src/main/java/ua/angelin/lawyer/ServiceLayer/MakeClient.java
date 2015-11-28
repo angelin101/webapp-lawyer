@@ -24,7 +24,7 @@ public class MakeClient {
         ClientDAO clientDAO = DBFactory.getClientDAO(connection);
         Client client = clientDAO.getClientByUser(user);
         AffairDAO affairDAO = DBFactory.getAffairDAO(connection);
-        List<Affair> affairList = affairDAO.getAffairsByClientID(client.getClientID());
+        List<Affair> affairList = affairDAO.getAffairsByClientID(client.getId());
         client.setAffairs(affairList);
         AddressDAO addressDAO = DBFactory.getAddressDAO(connection);
         Address address = addressDAO.getAddressByID(client.getAddressID());

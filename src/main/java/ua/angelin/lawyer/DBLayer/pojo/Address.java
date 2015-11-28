@@ -12,6 +12,7 @@ public class Address {
     public Address() {
     }
 
+    // Конструктор для Тестов
     public Address(String city, String street, String apartments) {
         this.city = city;
         this.street = street;

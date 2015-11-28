@@ -22,10 +22,10 @@ public class MyAffairDAOTest {
         DBFactory.closeConnection(connection);
         for (Affair affair : list){
             if (affair.getAffairID()==1) {
-                assertEquals("Конокрадство", affair.getSubjectOfDispute());
+                assertEquals("Хулиганство", affair.getSubjectOfDispute());
             }
             if (affair.getAffairID()==3){
-                assertEquals("Хулиганство", affair.getSubjectOfDispute());
+                assertEquals("Развод", affair.getSubjectOfDispute());
             }
             System.out.println(affair);
         }

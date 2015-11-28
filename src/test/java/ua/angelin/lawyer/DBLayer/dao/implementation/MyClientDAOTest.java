@@ -40,15 +40,15 @@ public class MyClientDAOTest {
         ClientDAO clientDAO = DBFactory.getClientDAO(connection);
         Client client = clientDAO.getClientByUser(user);
         AffairDAO affairDAO = DBFactory.getAffairDAO(connection);
-        List<Affair> affairList = affairDAO.getAffairsByClientID(client.getClientID());
+        List<Affair> affairList = affairDAO.getAffairsByClientID(client.getId());
         client.setAffairs(affairList);
         AddressDAO addressDAO = DBFactory.getAddressDAO(connection);
         Address address = addressDAO.getAddressByID(client.getAddressID());
         client.setAddress(address);
         Address myAddress = new Address("Горловка","Победы","18/31");
         assertEquals(myAddress, client.getAddress());
-        assertEquals(2, client.getAffairs().size());
-        assertEquals("Хулиганство", client.getAffairs().get(1).getSubjectOfDispute());
+        assertEquals(1, client.getAffairs().size());
+        assertEquals("Хулиганство", client.getAffairs().get(0).getSubjectOfDispute());
         System.out.println(client);
     }
 

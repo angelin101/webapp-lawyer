@@ -24,7 +24,7 @@
          </tr>
          <tr>
              <th>ИНН</th>
-             <th>${client.identNumber}</th>
+             <th>${client.inn}</th>
          </tr>
          <tr>
              <th>Адрес</th>

@@ -22,19 +22,6 @@ public abstract class User {
     public User() {
     }
 
-    public User(int userID, String login, String password, boolean isLawyer, String name, String surname, Address address, String telephoneNumber, String email, List<Affair> affairs) {
-        this.userID = userID;
-        this.login = login;
-        this.password = password;
-        this.isLawyer = isLawyer;
-        this.name = name;
-        this.surname = surname;
-        this.address = address;
-        this.telephoneNumber = telephoneNumber;
-        this.email = email;
-        this.affairs = affairs;
-    }
-
     public int getUserID() {
         return userID;
     }

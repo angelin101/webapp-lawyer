@@ -7,22 +7,16 @@ package ua.angelin.lawyer.DBLayer.pojo;
  */
 public class Affair {
     private int affairID;
-    private String subjectOfDispute;
-    private String otherSide; // Сделать обьектом как и Клиент
+
+    private String affairNumber;
+    private String status;
+    private Opponent opponent;
+    // Класс Affair не будет содержать обьекты Client и Lawyer!
     // Реализовать все переменные после чего реализовать методы equals() и hashCode()!!!
 
-    public Affair() {
-    }
-    // Временный конструктор!!!! Пока класс не будет реализован полностью!!!!
-    public Affair(int affairID, String subjectOfDispute){
-        this.affairID = affairID;
-        this.subjectOfDispute = subjectOfDispute;
-    }
+    private String subjectOfDispute;
 
-    public Affair(int affairID, String subjectOfDispute, String otherSide) {
-        this.affairID = affairID;
-        this.subjectOfDispute = subjectOfDispute;
-        this.otherSide = otherSide;
+    public Affair() {
     }
 
     public int getAffairID() {
@@ -40,12 +34,28 @@ public class Affair {
         this.subjectOfDispute = subjectOfDispute;
     }
 
-    public String getOtherSide() {
-        return otherSide;
+    public Opponent getOpponent() {
+        return opponent;
     }
 
-    public void setOtherSide(String otherSide) {
-        this.otherSide = otherSide;
+    public void setOpponent(Opponent opponent) {
+        this.opponent = opponent;
+    }
+
+    public String getAffairNumber() {
+        return affairNumber;
+    }
+
+    public void setAffairNumber(String affairNumber) {
+        this.affairNumber = affairNumber;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     // Временная реализация!!!!!!!

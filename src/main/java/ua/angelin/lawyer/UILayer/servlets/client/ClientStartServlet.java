@@ -38,7 +38,7 @@ public class ClientStartServlet extends HttpServlet {
         // Сначала в теле POST приходит обьект Client и мы его засовываем в переменную экземпляра
         client = (Client) req.getAttribute("client");
         // Вызываеться метод GET этого же сервлета (в GET запросе учавствует ID клиента)
-        resp.sendRedirect("/client?id="+client.getClientID());
+        resp.sendRedirect("/client?id="+client.getId());
     }
 
 }
