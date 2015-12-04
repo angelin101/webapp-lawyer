@@ -43,8 +43,9 @@ class MyClientDAO implements ClientDAO {
             client.setTelephoneNumber(resultSet.getString("telephone"));
             client.setEmail(resultSet.getString("email"));
             client.setAddressID(resultSet.getInt("address_id"));
+            client.setStatus(resultSet.getString("status"));
             /*
-            * Поле isLawyer инициализируеться блоком кода в Client при создании обьекта
+            * Поле isLawyer инициализируеться в конструкторе Client при создании обьекта
             * Поле Дела будет заполняться в Сервисном уровне, после получения обьекта Client
             * Поле Адрес тоже заполнять в Сервисном уровне, после получения обьекта Client
             */

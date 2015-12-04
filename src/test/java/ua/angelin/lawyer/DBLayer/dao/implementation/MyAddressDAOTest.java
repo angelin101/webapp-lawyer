@@ -20,8 +20,11 @@ public class MyAddressDAOTest {
         Address myAddress = new Address("Горловка","Победы","18/31");
         AddressDAO dao = DBFactory.getAddressDAO(connection);
         Address dbAddress = dao.getAddressByID(1);
+        Address address = dao.getAddressByID(4);
         DBFactory.closeConnection(connection);
         assertEquals(myAddress, dbAddress);
+        assertEquals(4, address.getAddressID());
+        assertEquals("Киев", address.getCity());
         System.out.println(dbAddress);
     }
 }

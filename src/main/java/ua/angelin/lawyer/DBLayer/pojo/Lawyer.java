@@ -26,4 +26,12 @@ public class Lawyer extends User {
     public void setLawyerLicense(String lawyerLicense) {
         this.lawyerLicense = lawyerLicense;
     }
+
+    @Override
+    public String toString() {
+        return "Lawyer{" +
+                "lawyerID=" + lawyerID +
+                ", lawyerLicense='" + lawyerLicense + '\'' +
+                '}';
+    }
 }

@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 import ua.angelin.lawyer.DBLayer.dao.UserDAO;
 import ua.angelin.lawyer.DBLayer.exceptions.UserNotFoundException;
 import ua.angelin.lawyer.DBLayer.pojo.Client;
+import ua.angelin.lawyer.DBLayer.pojo.Lawyer;
 import ua.angelin.lawyer.DBLayer.pojo.User;
 
 import java.sql.Connection;
@@ -34,16 +35,14 @@ class MyUserDAO implements UserDAO {
             statement.setString(2, password);
             ResultSet resultSet = statement.executeQuery();
             resultSet.next();
-            boolean isLawyer = true;
+            // Проверяем Юзера с данным логином и паролем, Клиент он или Адвокат!!!
             if (resultSet.getInt("lawyer")==0){
-                isLawyer = false;
-                user = new Client(); // Если false значит Клиент
+                user = new Client();
             }
             else{
-                // client = new Lawyer();
+                user = new Lawyer();
             }
             user.setUserID(resultSet.getInt("user_id"));
-            user.setIsLawyer(isLawyer);
             user.setLogin(login);
             user.setPassword(password);
         }catch (SQLException e) {

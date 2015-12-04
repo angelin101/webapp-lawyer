@@ -14,7 +14,7 @@ public class Opponent extends Client {
     public String toString() {
         return "Opponent{" +
                 " id=" + getId() + '\'' +
-                ", clientID='"+getUserID() + '\'' +
+                ", userID='"+getUserID() + '\'' +
                 ", name='"+getName() + '\'' +
                 ", surname='"+getSurname() + '\'' +
                 ", inn='" + getInn() + '\'' +

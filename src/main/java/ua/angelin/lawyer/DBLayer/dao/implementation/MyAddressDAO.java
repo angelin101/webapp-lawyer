@@ -30,6 +30,7 @@ class MyAddressDAO implements AddressDAO {
             statement.setInt(1, addressID);
             ResultSet resultSet = statement.executeQuery();
             resultSet.next();
+            address.setAddressID(addressID);
             address.setCity(resultSet.getString("city"));
             address.setStreet(resultSet.getString("street"));
             address.setApartments(resultSet.getString("apartment"));

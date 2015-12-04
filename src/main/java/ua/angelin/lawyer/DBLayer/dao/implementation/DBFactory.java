@@ -2,10 +2,7 @@ package ua.angelin.lawyer.DBLayer.dao.implementation;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import ua.angelin.lawyer.DBLayer.dao.AddressDAO;
-import ua.angelin.lawyer.DBLayer.dao.AffairDAO;
-import ua.angelin.lawyer.DBLayer.dao.ClientDAO;
-import ua.angelin.lawyer.DBLayer.dao.UserDAO;
+import ua.angelin.lawyer.DBLayer.dao.*;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -62,5 +59,11 @@ public final class DBFactory{
     }
     public static AffairDAO getAffairDAO(Connection connection){
         return new MyAffairDAO(connection);
+    }
+    public static LawyerDAO getLawyerDAO(Connection connection){
+        return new MyLawyerDAO(connection);
+    }
+    public static OpponentDAO getOpponentDAO(Connection connection){
+        return new MyOpponentDAO(connection);
     }
 }

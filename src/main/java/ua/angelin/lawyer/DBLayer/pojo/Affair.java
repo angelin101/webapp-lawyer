@@ -58,12 +58,23 @@ public class Affair {
         this.status = status;
     }
 
+    public void setOpponentID(int opponentID){
+        opponent = new Opponent();
+        opponent.setId(opponentID);
+    }
+
+    public int getOpponentID(){
+        return opponent.getId();
+    }
+
     // Временная реализация!!!!!!!
     @Override
     public String toString() {
         return "Affair{" +
                 "affairID=" + affairID +
+                ", affairNumber='" + affairNumber + '\'' +
                 ", subjectOfDispute='" + subjectOfDispute + '\'' +
+                ", status='" + status + '\'' +
                 '}';
     }
 }

@@ -53,6 +53,7 @@ public class Client extends User {
                 ", userID='"+getUserID() + '\'' +
                 ", name='"+getName() + '\'' +
                 ", surname='"+getSurname() + '\'' +
+                ", status='" + status + '\'' +
                 ", inn='" + inn + '\'' +
                 ", passport='" + passport + '\'' +
                 ", telephone='"+getTelephoneNumber() + '\'' +

@@ -18,10 +18,15 @@ public class MyUserDAOTest {
     public void testGetUserByLogin() throws UserNotFoundException {
         Connection connection = DBFactory.getConnection();
         UserDAO userDAO = DBFactory.getUserDAO(connection);
-        User user = userDAO.getUserByLogin("test1", "test1");
+        User user = userDAO.getUserByLogin("law", "law");
         User user2 = userDAO.getUserByLogin("test2", "test2");
         DBFactory.closeConnection(connection);
-        assertTrue(!user.isLawyer());
+        assertTrue(user.isLawyer());
+        assertEquals("test2", user2.getLogin());
+        assertEquals("test2", user2.getPassword());
+        assertEquals(false, user2.isLawyer());
+        assertEquals(2, user2.getUserID());
+        assertTrue(!user2.isLawyer());
         System.out.println(user.getUserID()+" | "+user.getLogin()+" | "+user.getPassword()+" | "+user.isLawyer());
         System.out.println(user2.getUserID()+" | "+user2.getLogin()+" | "+user2.getPassword()+" | "+user2.isLawyer());
     }
